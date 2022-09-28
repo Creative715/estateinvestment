@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+ */
+class CategoryFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    protected $model = Category::class;
+    public function definition()
+    {
+        $title = $this->faker->title;
+        $slug = Str::substr(Str::lower(preg_replace('/\s+/', '-', $title)), 0, -1);
+        return [
+            'title' => $title,
+             'slug' => $slug,
+        ];
+    }
+}

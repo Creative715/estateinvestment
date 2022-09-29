@@ -24,7 +24,8 @@ class CategoryFactory extends Factory
         $slug = Str::substr(Str::lower(preg_replace('/\s+/', '-', $title)), 0, -1);
         return [
             'title' => $title,
-             'slug' => $slug,
+            'description' => $this->faker->paragraph(3, true),
+            'slug' => $slug,
         ];
     }
 }

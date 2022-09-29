@@ -18,11 +18,6 @@ class MainController extends Controller
         ]);
     }
 
-    public function post($slug)
-    {
-        $posts = Post::findBySlug($slug);
-        return view('app.post', compact('posts'));
-    }
     public function category($slug)
     {
         $categories = Category::findBySlug($slug);

@@ -27,9 +27,8 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->text(30),
             'category_id' => $this->faker->numberBetween( 1,  6),
-            'city_id' => $this->faker->numberBetween( 1,  150),
+            'city_id' => $this->faker->numberBetween( 1,  14),
             'seo_title' => $this->faker->text(80),
-            'intro' => $this->faker->paragraph(20, true),
             'content' => $this->faker->paragraph(100, true),
             'description' => $this->faker->paragraph(10, true),
             'seo_description' => $this->faker->text(25),

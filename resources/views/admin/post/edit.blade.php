@@ -69,12 +69,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Вступний текст</label>
-                                        <textarea id="intro" name="intro" class="form-control" rows="4">{{ $post['intro'] }}</textarea>
-                                    </div>
-                                    <div class="form-group">
                                         <label>Текст сторінки</label>
-                                        <textarea id="page_content" name="content" class="form-control" rows="4">{{ $post['content'] }}</textarea>
+                                        <textarea id="content" name="content" class="form-control" rows="4">{{ $post['content'] }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Вартість</label>

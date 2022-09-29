@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-        </div><a class="link-classic wow fadeInUp" href="#">Вся нерухомість<span></span></a>
+        </div><a class="link-classic wow fadeInUp" href="{{ route('estates') }}">Вся нерухомість<span></span></a>
     </div>
 </section>
 <section id="aboutus" class="section section-sm section-first bg-default text-md-left">
@@ -130,7 +130,7 @@
                         </div>
                         <div class="unit-body">
                             <h5 class="box-icon-classic-title"><a href="#">{{ $category->title }}</a></h5>
-                            <p class="box-icon-classic-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, dolorem natus eum quod blanditiis.</p>
+                            <p class="box-icon-classic-text">{{ $category->getContentPreview() }}</p>
                         </div>
                     </div>
                 </article>
@@ -147,12 +147,14 @@
             <div class="col-sm-6 col-md-12 wow fadeInRight">
                 <article class="product-big">
                     <div class="unit flex-column flex-md-row align-items-md-stretch">
-                        <div class="unit-left"><a class="product-big-figure" href="#"><img src="images/img01.jpg" alt="{{ $post->title }}" width="600" height="366"/></a></div>
+                        <div class="unit-left"><a class="product-big-figure" href="#"><img src="{{ $post->img ?? asset('/images/no-image.jpg') }}" alt="{{ $post->title }}" width="600" height="366"/></a></div>
                         <div class="unit-body">
                             <div class="product-big-body">
                                 <h5 class="product-big-title"><a href="#">{{ $post->title }}</a></h5>
-                                <p class="product-big-text">{{ $post->intro }}</p><a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
-                                <div class="product-big-price-wrap"><span class="product-big-price">від ₴ {{ $post->price }}</span></div>
+                                <p class="product-big-text">{{ $post->getContentPreview() }}</p>
+                               <h5>Додано: {{ $post->createdAtForHumans() }}</h5>
+                                <a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
+                                <div class="product-big-price-wrap"><span class="product-big-price">від ₴ {{ $post->price }} М<sup>2</sup></span></div>
                             </div>
                         </div>
                     </div>

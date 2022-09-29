@@ -7781,9 +7781,10 @@ textarea.textarea-lg {
 .breadcrumbs-custom {
 	position: relative;
 	overflow: hidden;
-	padding: 40px 0;
+	padding: 20px 0;
 	text-align: center;
-	background-color: #cccccc;
+	background-color: transparent;
+    border: solid thin #cccccc;
 	z-index: 1;
 }
 
@@ -7857,7 +7858,8 @@ textarea.textarea-lg {
 
 @media (min-width: 1200px) {
 	.breadcrumbs-custom {
-		padding: 150px 0;
+		padding: 50px 0;
+        margin-top: 20px;
 	}
 }
 

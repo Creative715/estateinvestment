@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('category_id');
             $table->string('city_id');
             $table->string('seo_title')->nullable();
-            $table->text('intro')->nullable();
             $table->longText('content');
             $table->string('carousel')->nullable();
             $table->float('price');

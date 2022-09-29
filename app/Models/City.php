@@ -17,4 +17,8 @@ class City extends Model
             ->generateSlugFrom('title')
             ->saveSlugTo('slug');
     }
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }

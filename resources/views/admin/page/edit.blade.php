@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Текст сторінки</label>
-                                        <textarea id="page_content" name="content" class="form-control" rows="4">{{ $page['content'] }}</textarea>
+                                        <textarea id="content" name="content" class="form-control" rows="4">{{ $page['content'] }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Опис сторінки (SEO)</label>

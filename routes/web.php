@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('post/{slug}', [MainController::class, 'post'])->name('post.more');
+Route::get('estates', [\App\Http\Controllers\PostController::class, 'index'])->name('estates');
+Route::get('post/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
 
 Auth::routes();
 

@@ -10,7 +10,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::allPaginate(20);
-        return view('app.post.index',[
+        return view('app.post.index', [
             'posts' => $posts
         ]);
     }

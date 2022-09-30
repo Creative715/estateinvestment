@@ -10,8 +10,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <title>Нерухомість у Польщі. Придбання та оренда житла у Польщі. Земельні ділянки. Новобудови.</title>
-
+    <title>{{ $title ?? 'Нерухомість у Польщі. Придбання та оренда житла у Польщі. Земельні ділянки. Новобудови.' }}</title>
+    <meta name="description" content="{{ $description ?? 'Нерухомість у Польщі. Придбання та оренда житла у Польщі. Земельні ділянки. Новобудови.' }}">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7CPoppins:400%7CTeko:300,400">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">

@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10">
-                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Новобудови</span><span class="font-weight-bold"> у Польщі</span></h2><a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
+                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Новобудови</span><span class="font-weight-bold"> у Польщі</span></h2><a class="button button-default-outline button-ujarak" href="{{ url('/category/novobudovi') }}" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-10">
 
-                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Оренда</span><span class="font-weight-bold"> житла у Польщі</span></h2><a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
+                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Оренда</span><span class="font-weight-bold"> житла у Польщі</span></h2><a class="button button-default-outline button-ujarak" href="{{ url('/category/orenda-zitla') }}" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-md-10">
 
-                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Земельні</span><span class="font-weight-bold"> ділянки</span></h2><a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
+                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Земельні</span><span class="font-weight-bold"> ділянки</span></h2><a class="button button-default-outline button-ujarak" href="{{ url('/category/zemelni-dilianki') }}" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-md-10">
 
-                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Придбання</span><span class="font-weight-bold"> нерухомості</span></h2><a class="button button-default-outline button-ujarak" href="#" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
+                            <h2 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>Придбання</span><span class="font-weight-bold"> нерухомості</span></h2><a class="button button-default-outline button-ujarak" href="{{ url('/category/pridbannia-neruxomosti') }}" data-caption-animate="fadeInLeft" data-caption-delay="0">Докладніше</a>
                         </div>
                     </div>
                 </div>
@@ -58,22 +58,22 @@
                 <div class="row justify-content-center">
                     <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                         <ul class="list-marked-2 box-categories-list">
-                            <li><a href="#"><img src="images/cta-3-368x420.jpg" alt="" width="368" height="420"/></a>
-                                <h5 class="box-categories-title">Новинки</h5>
+                            <li><img src="{{ asset('images/cta-3-368x420.jpg') }}" alt="Новинки" width="368" height="420"/>
+                                <h5 class="box-categories-title"><a class="rd-nav-link" href="{{ url('/category/novobudovi') }}">Новобудови</a></h5>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                         <ul class="list-marked-2 box-categories-list">
-                            <li><a href="#"><img src="images/cta-2-368x420.jpg" alt="" width="368" height="420"/></a>
-                                <h5 class="box-categories-title">Продаж житла</h5>
+                            <li><img src="{{ asset('images/cta-2-368x420.jpg') }}" alt="Придбання нерухомості в Польщі" width="368" height="420"/>
+                                <h5 class="box-categories-title"><a href="{{ url('/category/pridbannia-neruxomosti') }}">Придбання нерухомості</a></h5>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-4 wow fadeInDown col-9" data-wow-delay=".2s">
                         <ul class="list-marked-2 box-categories-list">
-                            <li><a href="#"><img src="images/cta-1-368x420.jpg" alt="" width="368" height="420"/></a>
-                                <h5 class="box-categories-title">Оренда житла</h5>
+                            <li><img src="{{ asset('images/cta-1-368x420.jpg') }}" alt="Оренда житла Польща" width="368" height="420"/>
+                                <h5 class="box-categories-title"><a href="{{ url('/category/orenda-zitla') }}">Оренда житла</a></h5>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +85,7 @@
 <section id="aboutus" class="section section-sm section-first bg-default text-md-left">
     <div class="container">
         <div class="row row-50 align-items-center justify-content-center justify-content-xl-between">
-            <div class="col-lg-6 text-center wow fadeInUp"><img src="images/index-3-556x382.jpg" alt="" width="556" height="382"/>
+            <div class="col-lg-6 text-center wow fadeInUp"><img src="{{ asset('images/index-3-556x382.jpg') }}" alt="" width="556" height="382"/>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay=".1s">
                 <div class="box-width-lg-470">
@@ -129,8 +129,8 @@
                             <div class="box-icon-classic-icon fl-bigmug-line-equalization3"></div>
                         </div>
                         <div class="unit-body">
-                            <h5 class="box-icon-classic-title"><a href="#">{{ $category->title }}</a></h5>
-                            <p class="box-icon-classic-text">{{ $category->getContentPreview() }}</p>
+                            <h5 class="box-icon-classic-title"><a href="{{ route('category.more', $category->slug) }}">{{ $category->title }}</a></h5>
+                            <p class="box-icon-classic-text">{!! $category->getContentPreview() !!} </p>
                         </div>
                     </div>
                 </article>
@@ -139,7 +139,7 @@
         </div>
     </div>
 </section>
-<section class="section section-sm bg-default">
+<section id="new" class="section section-sm bg-default">
     <div class="container">
         <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Нові надходження</span></h3>
         <div class="row row-sm row-40 row-md-50">
@@ -150,9 +150,13 @@
                         <div class="unit-left"><a class="product-big-figure" href="#"><img src="{{ $post->img ?? asset('/images/no-image.jpg') }}" alt="{{ $post->title }}" width="600" height="366"/></a></div>
                         <div class="unit-body">
                             <div class="product-big-body">
-                                <h5 class="product-big-title"><a href="#">{{ $post->title }}</a></h5>
-                                <p class="product-big-text">{{ $post->getContentPreview() }}</p>
-                               <h5>Додано: {{ $post->createdAtForHumans() }}</h5>
+                                <h5 class="product-big-title"><a href="{{ route('post.more', $post->slug) }}">{{ $post->title }}</a></h5>
+                                <p class="product-big-text">{!! $post->getContentPreview() !!}</p>
+                               <h5 class="product-big-title">Додано: {{ $post->createdAtForHumans() }}</h5>
+                                <div class="mt-3">
+                                    <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}" class="badge bg-info">
+                                            <h5>{{$post->city->title}}</h5></a></h5>
+                                </div>
                                 <a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
                                 <div class="product-big-price-wrap"><span class="product-big-price">від ₴ {{ $post->price }} М<sup>2</sup></span></div>
                             </div>

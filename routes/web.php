@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('estates', [\App\Http\Controllers\PostController::class, 'index'])->name('estates');
 Route::get('post/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
+Route::get('category/{slug}', [\App\Http\Controllers\CategoryController::class, 'category'])->name('category.more');
+Route::get('city/{slug}', [\App\Http\Controllers\CityController::class, 'city'])->name('city.more');
+
 
 Auth::routes();
 

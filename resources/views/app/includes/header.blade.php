@@ -45,6 +45,8 @@
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#aboutus">Про нас</a>
                             </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="#new">Нові надходження</a>
+                            </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#catalogue">Каталог об'єктів</a>
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#contact">Контакт</a>

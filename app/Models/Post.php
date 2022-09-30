@@ -20,23 +20,34 @@ class Post extends Model
             ->generateSlugFrom('title')
             ->saveSlugTo('slug');
     }
+
     public function scopeAllPaginate($query, $numbers)
     {
-        return $query->with('cities', 'state')->orderBy('created_at', 'desc')->paginate($numbers);
+        return $query->with('city', 'state')->orderBy('created_at', 'desc')->paginate($numbers);
     }
 
-    public function getContentPreview(){
-        return Str::limit($this->content, 140);
+    public function getContentPreview()
+    {
+        return Str::limit($this->content, 110);
     }
-    public function createdAtForHumans(){
+
+    public function createdAtForHumans()
+    {
         return $this->created_at->diffForHumans();
     }
-    public function cities()
+
+
+    public function city(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsToMany(City::class, 'post_city');
+        return $this->belongsTo('App\Models\City', 'city_id');
     }
     public function state()
     {
         return $this->hasOne(State::class);
+    }
+
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
 }

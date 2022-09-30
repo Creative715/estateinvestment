@@ -21,4 +21,9 @@ class Category extends Model
     public function getContentPreview(){
         return Str::limit($this->description, 100);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

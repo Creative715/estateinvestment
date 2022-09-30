@@ -14,7 +14,7 @@
                                 </li>
                                 <li>
                                     <div class="unit">
-                                        <div class="unit-body"><a class="link-aemail" href="mailto:info@estateinvestment.com.ua"><i style="color: #01B3A7;" class="fas fa-envelope"></i> info@estateinvestment.com.ua</a></div>
+                                        <div class="unit-body"><a class="link-aemail" href="mailto:info@estateinvestment.com.ua"><i style="color: #01B3A7;" class="fas fa-envelope"></i> sale@estateinvestment.com.ua</a></div>
                                     </div>
                                 </li>
                                 <li>

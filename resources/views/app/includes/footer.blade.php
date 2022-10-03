@@ -31,7 +31,6 @@
                     <div class="oh-desktop">
                         <div class="wow slideInDown" data-wow-delay="0s">
                             <h6 class="text-spacing-100 text-uppercase">Умови оренди</h6>
-
                             <article class="post post-minimal-2">
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit?</p>
                             </article>

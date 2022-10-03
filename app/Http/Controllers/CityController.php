@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
+
+    public function index()
+    {
+        $cities = City::all();
+        return view('app.city.index', compact( 'cities'));
+    }
+
     public function city($slug)
     {
         $cities = City::findBySlug($slug);

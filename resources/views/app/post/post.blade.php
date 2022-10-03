@@ -21,8 +21,8 @@
                     <h4>Ціна від: {{ $posts->price }} M<sup>2</sup></h4>
                     <h5>Додано: {{ $posts->createdAtForHumans() }}</h5>
                     <div class="mt-4">
-                        <h4>Місто: <a href="{{ route('city.more', $posts->city->slug) }}" class="badge bg-info">
-                                <h4>{{$posts->city->title}}</h4></a></h4>
+                        <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $posts->city->slug) }}">
+                                {{$posts->city->title}}</a></h5>
                     </div>
                 </div>
                 <div class="col-xl-8">

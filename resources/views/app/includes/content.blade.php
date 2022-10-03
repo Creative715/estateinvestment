@@ -1,7 +1,7 @@
 <!-- Swiper-->
 <section class="section swiper-container swiper-slider swiper-slider-corporate swiper-pagination-style-2" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="false" data-direction="vertical">
     <div class="swiper-wrapper text-left">
-        <div class="swiper-slide context-dark" data-slide-bg="images/slider-4-slide-1-1920x678.jpg">
+        <div class="swiper-slide context-dark" data-slide-bg="{{ asset('images/slider-4-slide-1-1920x678.jpg') }}">
             <div class="swiper-slide-caption section-md">
                 <div class="container">
                     <div class="row">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-slide context-dark" data-slide-bg="images/slider-4-slide-3-1920x678.jpg">
+        <div class="swiper-slide context-dark" data-slide-bg="{{ asset('images/slider-4-slide-3-1920x678.jpg') }}">
             <div class="swiper-slide-caption section-md">
                 <div class="container">
                     <div class="row">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-slide context-dark" data-slide-bg="images/slider-4-slide-4-1920x678.jpg">
+        <div class="swiper-slide context-dark" data-slide-bg="{{ asset('images/slider-4-slide-4-1920x678.jpg') }}">
             <div class="swiper-slide-caption section-md">
                 <div class="container">
                     <div class="row">
@@ -154,8 +154,8 @@
                                 <p class="product-big-text">{!! $post->getContentPreview() !!}</p>
                                <h5 class="product-big-title">Додано: {{ $post->createdAtForHumans() }}</h5>
                                 <div class="mt-3">
-                                    <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}" class="badge bg-info">
-                                            <h5>{{$post->city->title}}</h5></a></h5>
+                                    <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}">
+                                            {{$post->city->title}}</a></h5>
                                 </div>
                                 <a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
                                 <div class="product-big-price-wrap"><span class="product-big-price">від ₴ {{ $post->price }} М<sup>2</sup></span></div>
@@ -168,74 +168,116 @@
         </div>
     </div>
 </section>
+<section id="city" class="section section-sm">
+    <div class="container">
+        <h3>Нерухомість у містах</h3>
+        <div class="row row-30">
+            @foreach($cities as $city)
+                <div class="col-sm-6 col-lg-4">
+                    <article class="box-icon-classic">
+
+                        <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                            <div class="unit-left">
+                                <div class="box-icon-classic-icon fl-bigmug-line-equalization3"></div>
+                            </div>
+                            <div class="unit-body">
+                                <h5 class="box-icon-classic-title"><a href="{{ route('city.more', $city->slug) }}">{{ $city->title }}</a></h5>
+                                <p class="box-icon-classic-text">{!! $city->getContentPreview() !!} </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 <section class="section bg-default text-center offset-top-50">
-    <div class="parallax-container" data-parallax-img="images/parallax-1-1920x850.jpg">
+    <div class="parallax-container" data-parallax-img="{{ asset('images/parallax-1-1920x850.jpg') }}">
         <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-2-21">
             <div class="container">
-                <h2 class="heading-2 oh font-weight-normal wow slideInDown"><span class="d-block font-weight-semi-bold">Підпишіться</span><span class="d-block font-weight-light">на нашу розсилку</span></h2>
-                <p class="text-width-medium text-spacing-75 wow fadeInLeft" data-wow-delay=".1s">І взнавайте про нові надходження та акції першими.</p>
-                <div class="row">
-                    <div class="col-md-6">
-{{--                        <div class="form-wrap">--}}
-{{--                            <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">--}}
-{{--                            <label class="form-label" for="contact-email-2">E-mail</label>--}}
-{{--                        </div>--}}
-                    </div>
-                    <div class="col-md-6">
-                        <a style="padding: 20px 0;" class="button button-secondary btn-block button-pipaluk" href="#">Надіслати</a>
-                    </div>
-                </div>
+                <h2 class="heading-2 oh font-weight-normal wow slideInDown"><span class="d-block font-weight-semi-bold">Заповнивши форму</span><span class="d-block font-weight-light">можна задати запитання</span></h2>
+                <p class="text-width-medium text-spacing-75 wow fadeInLeft" data-wow-delay=".1s">І наш менеджер відповість вам на поштову скриньку, або зателефонуює у найближчий час</p>
+                    <form  method="post" action="{{ route('send') }}">
+                        @csrf
+                        <div class="row row-14 gutters-14">
+                            <div class="col-md-4">
+                                <div class="form-wrap">
+                                    <input class="form-input" id="name" type="text" name="name" required>
+                                    <label class="form-label" for="name">Ваше ім'я</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-wrap">
+                                    <input class="form-input" id="email" type="email" name="email" required>
+                                    <label class="form-label" for="email">E-mail</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-wrap">
+                                    <input class="form-input" id="phone" type="tel" name="phone" required>
+                                    <label class="form-label" for="phone">Телефон</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-wrap">
+                                    <label class="form-label" for="massage">Текст запитання</label>
+                                    <textarea class="form-input textarea-lg" id="massage" name="massage" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="button button-primary button-pipaluk" type="submit">Надісати запитання</button>
+                    </form>
             </div>
         </div>
     </div>
 </section>
-<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4">
-    <div class="container-fluid">
-        <div></div>
-        <h3 class="mt-3">Галерея нерухомості</h3>
-        <div class="owl-carousel owl-classic owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="5" data-xxl-items="6" data-stage-padding="15" data-xxl-stage-padding="0" data-margin="30" data-autoplay="true" data-nav="true" data-dots="true">
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-1-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-1-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-1-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-2-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-2-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-2-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-3-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-3-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-3-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-4-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-4-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-4-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-5-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-5-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-5-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-6-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-6-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-6-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-            <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure"><img src="images/gallery-image-7-270x195.jpg" alt="" width="270" height="195"/>
-                </div>
-                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-7-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-7-270x195.jpg" alt="" width="270" height="195"/></a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+{{--<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4">--}}
+{{--    <div class="container-fluid">--}}
+{{--        <div></div>--}}
+{{--        <h3 class="mt-3">Галерея нерухомості</h3>--}}
+{{--        <div class="owl-carousel owl-classic owl-dots-secondary" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="5" data-xxl-items="6" data-stage-padding="15" data-xxl-stage-padding="0" data-margin="30" data-autoplay="true" data-nav="true" data-dots="true">--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-1-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-1-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-1-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-2-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-2-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-2-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-3-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-3-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-3-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-4-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-4-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-4-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-5-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-5-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-5-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-6-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-6-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-6-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--            <article class="thumbnail thumbnail-mary">--}}
+{{--                <div class="thumbnail-mary-figure"><img src="images/gallery-image-7-270x195.jpg" alt="" width="270" height="195"/>--}}
+{{--                </div>--}}
+{{--                <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-image-7-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-image-7-270x195.jpg" alt="" width="270" height="195"/></a>--}}
+{{--                </div>--}}
+{{--            </article>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}

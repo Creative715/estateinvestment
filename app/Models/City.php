@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Helpers\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class City extends Model
 {
@@ -16,6 +17,9 @@ class City extends Model
             ->slugSeperator('-')
             ->generateSlugFrom('title')
             ->saveSlugTo('slug');
+    }
+    public function getContentPreview(){
+        return Str::limit($this->description, 80);
     }
     public function posts()
     {

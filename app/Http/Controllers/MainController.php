@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\City;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,10 +12,12 @@ class MainController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $cities = City::all();
         $posts = Post::orderBy('created_at', 'desc')->take('4')->get();
         return view('app.main', [
             'posts' => $posts,
-            'categories' => $categories
+            'categories' => $categories,
+            'cities' => $cities
         ]);
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.app' , ['title' => "$cities->title", 'description' => "$cities->description"])
-@include('app.includes.header')
 @section('content')
+    @include('app.includes.header')
     <div class="container">
         <section class="section section-sm section-first bg-default text-left">
             <div class="container">
@@ -15,7 +15,8 @@
                                 <h4>Ціна від: {{ $post->price }} M<sup>2</sup></h4>
                                 <h5>Додано: {{ $post->createdAtForHumans() }}</h5>
                                 <div class="mt-4">
-
+                                    <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}"">
+                                            {{$post->city->title}}</a></h5>
                                 </div>
                                 <a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
                             </div>
@@ -26,4 +27,7 @@
                 <div class="mx-auto my-4" style="width: max-content">{{ $posts->links() }}</div>
             </div>
         </section>
+    </div>
+        <hr>
+    @include('app.includes.footer')
 @endsection

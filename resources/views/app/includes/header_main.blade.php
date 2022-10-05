@@ -28,8 +28,8 @@
                                 <div class="unit unit-spacing-xs">
                                     <div class="unit-body">
                                         <div class="row">
-                                            <div class="col col-md-6 text-center"><a class="link-phone" href="viber://chat?number=48575707823"><h4><i class="fab fa-viber"></i></h4></a></div>
-                                            <div class="col col-md-6 text-center"><a class="link-phone" href="wa.me://48575707823"><h4><i class="fab fa-whatsapp "></i></h4></a></div>
+                                            <div class="col col-md-6 text-center"><a class="link-phone" target="_blank" href="viber://chat?number=48575707823"><h4><i class="fab fa-viber"></i></h4></a></div>
+                                            <div class="col col-md-6 text-center"><a class="link-phone" target="_blank" href="https://api.whatsapp.com/send?phone=48575707823"><h4><i class="fab fa-whatsapp "></i></h4></a></div>
                                         </div>
 
 
@@ -37,7 +37,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a data-toggle="modal" data-target="#exampleModal"
+                        <a data-toggle="modal" data-target="#Modal"
                            class="button button-md button-default-outline-2 button-ujarak" href="#">Замовити дзвінок</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             <li><a href="#"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
                         </ul>
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Головна</a>
+                            <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url('/') }}">Головна</a>
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#new">Нові надходження</a>
                             </li>

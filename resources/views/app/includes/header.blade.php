@@ -37,17 +37,14 @@
                                 <div class="unit unit-spacing-xs">
                                     <div class="unit-body">
                                         <div class="row">
-                                            <div class="col col-md-6 text-center"><a class="link-phone" href="viber://chat?number=48575707823"><h4><i class="fab fa-viber"></i></h4></a></div>
-                                            <div class="col col-md-6 text-center"><a class="link-phone" href="wa.me://48575707823"><h4><i class="fab fa-whatsapp "></i></h4></a></div>
+                                            <div class="col col-md-6 text-center"><a class="link-phone" target="_blank" href="viber://chat?number=48575707823"><h4><i class="fab fa-viber"></i></h4></a></div>
+                                            <div class="col col-md-6 text-center"><a class="link-phone" target="_blank" href="https://api.whatsapp.com/send?phone=48575707823"><h4><i class="fab fa-whatsapp "></i></h4></a></div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        <a data-toggle="modal" data-target="#exampleModal"
-                           class="button button-md button-default-outline-2 button-ujarak" href="#">Замовити дзвінок</a>
+                        <a data-toggle="modal" data-target="#Modal" class="button button-md button-default-outline-2 button-ujarak" href="#">Замовити дзвінок</a>
                     </div>
                 </div>
             </div>
@@ -59,15 +56,15 @@
                             <li><a href="#"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
                         </ul>
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Головна</a>
+                            <li class="rd-nav-item {{ $mainLink }}"><a class="rd-nav-link" href="{{ url('/') }}">Головна</a>
                             </li>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('estates') }}">Вся
+                            <li class="rd-nav-item {{ $estateLink }}"><a class="rd-nav-link" href="{{ route('estates') }}">Вся
                                     нерухомість</a>
                             </li>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('category') }}">Категорії
+                            <li class="rd-nav-item {{ $categoryLink }}"><a class="rd-nav-link" href="{{ route('category') }}">Категорії
                                     об'єктів</a>
                             </li>
-                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('city') }}">Нерухомість у
+                            <li class="rd-nav-item {{ $cityLink }}"><a class="rd-nav-link" href="{{ route('city') }}">Нерухомість у
                                     містах</a>
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#contact">Контакт</a>

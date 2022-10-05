@@ -1,6 +1,24 @@
 @extends('layouts.app', ['title' => $posts->title, 'description' => $posts->description])
 @include('app.includes.header')
 @section('content')
+    <div class="modal fade" id="ModalImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="min-width: 800px !important;" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ $posts->title }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-thumbnail" src="{{ $posts->img ?? (asset('images/no-image.jpg')) }}"
+                         alt="{{ $posts->title }}"/>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="breadcrumbs-custom-inset">
         <div class="breadcrumbs-custom context-dark bg-overlay-60">
             <div class="container">
@@ -28,8 +46,10 @@
                 <div class="col-xl-8">
                     <ul class="list-xl box-typography">
                         <li>
+                            <a data-toggle="modal" data-target="#ModalImg" href="#">
                             <img class="img-thumbnail" src="{{ $posts->img ?? (asset('images/no-image.jpg')) }}"
                                  alt="{{ $posts->title }}"/>
+                            </a>
                         </li>
                         <li>
                             <h2>{{ $posts->title }}</h2>

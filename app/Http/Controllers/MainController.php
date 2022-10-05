@@ -13,7 +13,7 @@ class MainController extends Controller
     {
         $categories = Category::all();
         $cities = City::all();
-        $posts = Post::orderBy('created_at', 'desc')->take('4')->get();
+        $posts = Post::orderBy('created_at', 'desc')->where('published', '1')->take('4')->get();
         return view('app.main', [
             'posts' => $posts,
             'categories' => $categories,

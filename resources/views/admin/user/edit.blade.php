@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Редагувати місто')
+@section('title', 'Редагувати користувача')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -34,21 +34,29 @@
                         @endif
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">@yield('title') - {{ $city['title'] }}</h3>
+                                <h3 class="card-title">@yield('title') - {{ $user['name'] }}</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('city.update', $city['id']) }}" method="post">
+                            <form enctype="multipart/form-data" action="{{ route('user.update', $user['id']) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Назва</label>
-                                        <input type="text" name="title" value="{{ $city['title'] }}" class="form-control" placeholder="Введіть назву" required>
+                                        <input type="text" name="title" value="{{ $user['name'] }}" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Slug</label>
-                                        <input type="text" name="slug" class="form-control"  value="{{ $city['slug']}}" placeholder="url" required>
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="text" name="slug" class="form-control"  value="{{ $user['email']}}" placeholder="url" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <img class="img-thumbnail" src="{{ $user->img }}" alt="{{ $user->name }}"
+                                             title="{{ $user->name }}" width="150" height="auto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Аватар</label>
+                                        <input name="img" class="form-control" type="file" value="{{ $user->img }}">
                                     </div>
 
                                 </div>

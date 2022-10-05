@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('estates', [\App\Http\Controllers\PostController::class, 'index'])->name('estates');
-Route::get('post/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
+Route::get('estate/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
 Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category');
 Route::get('category/{slug}', [\App\Http\Controllers\CategoryController::class, 'category'])->name('category.more');
 Route::get('city', [\App\Http\Controllers\CityController::class, 'index'])->name('city');
@@ -41,4 +42,5 @@ Route::group(['prefix'=>'inside', 'middleware'=>['auth']], function(){
     Route::resource('category', CategoryController::class);
     Route::resource('city', CityController::class);
     Route::resource('page', PageController::class);
+    Route::resource('user', UserController::class);
 });

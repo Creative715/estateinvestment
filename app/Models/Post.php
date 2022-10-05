@@ -23,7 +23,7 @@ class Post extends Model
 
     public function scopeAllPaginate($query, $numbers)
     {
-        return $query->with('city', 'state')->orderBy('created_at', 'desc')->paginate($numbers);
+        return $query->with('city', 'state')->orderBy('created_at', 'desc')->where('published', '1')->paginate($numbers);
     }
 
     public function getContentPreview()

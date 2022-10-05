@@ -38,39 +38,55 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form enctype="multipart/form-data" action="{{ route('post.update', $post['id']) }}" method="post">
+                            <form enctype="multipart/form-data" action="{{ route('post.update', $post['id']) }}"
+                                  method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Назва Menu</label>
-                                        <input type="text" name="title" value="{{ $post['title'] }}" class="form-control" placeholder="Введіть назву" required>
+                                        <input type="text" name="title" value="{{ $post['title'] }}"
+                                               class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Назва Seo</label>
-                                        <input type="text" name="seo_title" value="{{ $post['seo_title'] }}" class="form-control" placeholder="Введіть назву" required>
+                                        <input type="text" name="seo_title" value="{{ $post['seo_title'] }}"
+                                               class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleSelectRounded0">Категорія</label>
-                                        <select name="category_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                                        <select name="category_id" class="custom-select rounded-0"
+                                                id="exampleSelectRounded0">
                                             @foreach($categories as $category)
-                                                <option value="{{ $category['id'] }}" @if ($category['id'] == $post['category_id']) selected
+                                                <option value="{{ $category['id'] }}"
+                                                        @if ($category['id'] == $post['category_id']) selected
                                                     @endif>{{ $category['title'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleSelectRounded0">Місто</label>
-                                        <select name="category_id" class="custom-select rounded-0" id="exampleSelectRounded0">
-                                              @foreach($cities as $city)
-                                                <option value="{{ $city['id'] }}" @if ($city['id'] == $post['category_id']) selected
+                                        <select name="city_id" class="custom-select rounded-0"
+                                                id="exampleSelectRounded0">
+                                            @foreach($cities as $city)
+                                                <option value="{{ $city['id'] }}"
+                                                        @if ($city['id'] == $post['city_id']) selected
                                                     @endif>{{ $city['title'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        <label for="exampleSelectRounded0">Опубліковано</label>
+                                        <select name="published" class="custom-select rounded-0"
+                                                id="exampleSelectRounded0">
+                                            <option value="{{ $post['published'] = '1' }}">Так</option>
+                                            <option value="{{ $post['published'] = '0' }}">Ні</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Текст сторінки</label>
-                                        <textarea id="content" name="content" class="form-control" rows="4">{{ $post['content'] }}</textarea>
+                                        <textarea id="content" name="content" class="form-control"
+                                                  rows="4">{{ $post['content'] }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Вартість</label>
@@ -78,10 +94,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Опис сторінки (SEO)</label>
-                                        <input type="text" name="description" value="{{ $post['description'] }}" class="form-control" id="exampleInputName" placeholder="Введіть опис" required>
+                                        <input type="text" name="description" value="{{ $post['description'] }}"
+                                               class="form-control" id="exampleInputName" placeholder="Введіть опис"
+                                               required>
                                     </div>
                                     <div class="form-group">
-                                        <img class="img-thumbnail" src="{{ $post->img }}" alt="{{ $post->title }}" title="{{ $post->title }}" width="150" height="auto">
+                                        <img class="img-thumbnail" src="{{ $post->img }}" alt="{{ $post->title }}"
+                                             title="{{ $post->title }}" width="150" height="auto">
                                     </div>
                                     <div class="form-group">
                                         <label>Зображення</label>
@@ -89,7 +108,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Адреса сторінки</label>
-                                        <input type="text" name="slug" class="form-control"  value="{{ $post['slug'] }}" readonly>
+                                        <input type="text" name="slug" class="form-control" value="{{ $post['slug'] }}"
+                                               readonly>
                                     </div>
 
                                 </div>

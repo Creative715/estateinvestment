@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -34,13 +34,13 @@
                     <div class="row row-14 gutters-14">
                         <div class="col-md-12">
                             <div class="form-wrap">
-                                <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="">
+                                <input class="form-input" id="contact-your-name-2" type="text" name="name" required>
                                 <label class="form-label" for="contact-your-name-2">Ваше ім'я</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-wrap">
-                                <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
+                                <input class="form-input" id="contact-phone-2" type="text" name="phone" required>
                                 <label class="form-label" for="contact-phone-2">Телефон</label>
                             </div>
                         </div>

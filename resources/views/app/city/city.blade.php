@@ -10,7 +10,10 @@
                         <div class="col-xl-6 d-none d-xl-block">
                             <div class="card-body">
                                 <img src="{{ $post->img ?? asset('/images/no-image.jpg') }}" alt="{{ $post->title }}">
-                                <div class="card-title">{{ $post->title }}</div>
+                                <div class="card-title">
+                                    <div class="mt-4"></div>
+                                    <h4><a href="{{ route('post.more', $post->slug) }}">{{ $post->title }}</a></h4>
+                                </div>
                                 <p class="card-text">{{ $post->getContentPreview() }}</p>
                                 <h4>Ціна від: {{ $post->price }} M<sup>2</sup></h4>
                                 <h5>Додано: {{ $post->createdAtForHumans() }}</h5>

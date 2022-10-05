@@ -94,7 +94,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ asset('/dashboard/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ Auth::user()->img }}" class="img-circle elevation-2" title="{{ Auth::user()->name }}" alt="{{ Auth::user()->name }}">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
@@ -136,7 +136,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item menu">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-database"></i>
                             <p>
@@ -166,7 +166,7 @@
 {{--                            </li>--}}
                         </ul>
                     </li>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item menu">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-database"></i>
                             <p>
@@ -190,7 +190,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item menu-open">
+                    <li class="nav-item menu">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -214,6 +214,24 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item menu">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Користувачі
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+                            <li class="nav-item">
+                                <a href="{{ route('user.index') }}" class="nav-link">
+                                    <i class="far fa-arrow-alt-circle-right nav-icon"></i>
+                                    <p>Користувачі</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -225,6 +243,29 @@
     <footer class="main-footer">
         <div class="float-right d-none d-sm-inline-block">
             <b><a target="_blank" href="/">На сайт</a></b>
+            <!-- hit.ua -->
+            <a href='https://hit.ua/?x=23407' rel="nofollow" target='_blank'>
+                <script> Cd=document;Cr="&"+Math.random();Cp="&s=1";
+                    Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
+                    Cp+="&t="+(new Date()).getTimezoneOffset();
+                    if(self!=top)Cp+="&f=1";
+                </script>
+                <script>
+                    if(navigator.javaEnabled())Cp+="&j=1";
+                </script>
+                <script>
+                    if(typeof(screen)!='undefined')Cp+="&w="+screen.width+"&h="+
+                        screen.height+"&d="+(screen.colorDepth?screen.colorDepth:screen.pixelDepth);
+                </script>
+                <script>
+                    Cd.write("<img src='//c.hit.ua/hit?i=23407&g=0&x=2"+Cp+Cr+
+                        "&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
+                        "' border='0' wi"+"dth='1' he"+"ight='1'/>");
+                </script>
+                <noscript>
+                    <img src='//c.hit.ua/hit?i=23407&amp;g=0&amp;x=2' alt="estates" />
+                </noscript></a>
+            <!-- / hit.ua -->
         </div>
     </footer>
 

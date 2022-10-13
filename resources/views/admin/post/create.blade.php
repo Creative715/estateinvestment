@@ -42,16 +42,12 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Назва</label>
+                                        <label for="exampleInputEmail1">Назва нерухомості</label>
                                         <input type="text" name="title" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Назва Seo</label>
-                                        <input type="text" name="seo_title" class="form-control" placeholder="Введіть назву" required>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="exampleSelectRounded0">Категорія</label>
-                                        <select name="category_id" class="custom-select rounded-0" id="exampleSelectRounded0">
+                                        <select name="category_id" class="custom-select rounded-0" id="category_id">
                                             @foreach($categories as $category)
                                                 <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
                                             @endforeach
@@ -66,8 +62,12 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="intro">Вступний текст</label>
-                                        <textarea id="intro" name="intro" class="form-control" rows="4"></textarea>
+                                        <label for="exampleSelectRounded0">Опубліковано</label>
+                                        <select name="published" class="custom-select rounded-0"
+                                                id="exampleSelectRounded0">
+                                            <option value="{{ $post['published'] = '1' }}">Так</option>
+                                            <option value="{{ $post['published'] = '0' }}">Ні</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Текст сторінки</label>
@@ -75,15 +75,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Вартість</label>
-                                        <input id="price" name="price" class="form-control">
+                                        <input type="text" id="price" name="price" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Опис сторінки (SEO)</label>
                                         <input type="text" name="description" class="form-control" id="exampleInputName" placeholder="Введіть опис" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Зображення</label>
+                                        <label for="exampleInputEmail1">Головне зображення</label>
                                         <input name="img" class="form-control" type="file">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="images[]">Додаткові зображення:</label>
+                                        <input type="file" class="form-control m-2" name="images[]" multiple>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Адреса сторінки</label>

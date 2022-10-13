@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -31,7 +34,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $cities = City::all();
-        return view('admin.post.create',[
+        return view('admin.post.create', [
             'categories' => $categories,
             'cities' => $cities
         ]);
@@ -40,7 +43,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -54,6 +57,18 @@ class PostController extends Controller
         }
 
         $post->save();
+
+        if ($request->hasFile("images")) {
+            $files = $request->file("images");
+            foreach ($files as $file) {
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $request['post_id'] = $post->id;
+                $request['image'] = $imageName;
+                $file->move(\public_path("/images/gallery"), $imageName);
+                Image::create($request->all());
+
+            }
+        }
         return redirect('inside/post')->withSuccess('Сторінка успішно додана!');
 
     }
@@ -61,7 +76,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
@@ -72,14 +87,14 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param \App\Models\Post $post
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Post $post)
     {
         $categories = Category::all();
         $cities = City::all();
-        return view('admin.post.edit',[
+        return view('admin.post.edit', [
             'categories' => $categories,
             'cities' => $cities,
             'post' => $post
@@ -89,8 +104,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
@@ -105,13 +120,24 @@ class PostController extends Controller
 
         $post->save();
 
+        if ($request->hasFile("images")) {
+            $files = $request->file("images");
+            foreach ($files as $file) {
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $request['post_id'] = $post->id;
+                $request['image'] = $imageName;
+                $file->move(\public_path("/images/gallery"), $imageName);
+                Image::create($request->all());
+
+            }
+        }
         return redirect('inside/post')->withSuccess('Сторінка успішно оновлена!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)
@@ -119,5 +145,16 @@ class PostController extends Controller
         $post->delete();
 
         return redirect('inside/post')->withSuccess('Сторінка успішно видалена!');
+    }
+
+    public function deleteimage($id)
+    {
+        $images = Image::findOrFail($id);
+        if (File::exists("images/gallery/" . $images->image)) {
+            File::delete("images/gallery/" . $images->image);
+        }
+
+        Image::find($id)->delete();
+        return back();
     }
 }

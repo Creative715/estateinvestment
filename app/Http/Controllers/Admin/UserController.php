@@ -80,7 +80,7 @@ class UserController extends Controller
         if ($request->file('img')) {
             $path = Storage::putFile('public', $request->file('img'));
             $url = Storage::url($path);
-            $user->img = $url;
+            $user->avatar = $url;
         }
 
         $user->save();

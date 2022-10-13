@@ -19,7 +19,7 @@
                                         <div class="unit-body"><a class="link-aemail"
                                                                   href="mailto:info@estateinvestment.com.ua"><i
                                                     style="color: #01B3A7;" class="fas fa-envelope"></i>
-                                                sale@estateinvestment.com.ua</a></div>
+                                                admine@estateinvestment.com.ua</a></div>
                                     </div>
                                 </li>
                                 <li>
@@ -68,7 +68,7 @@
                 <div class="col-sm-6 col-md-4 text-sm-right text-md-right">
                     <div>
                         <ul class="list-inline list-inline-sm">
-                            <li><a href="#"><i style="color: #fff;" class="fab fa-facebook-f fa-2x"></i></a></li>
+                            <li><a href="#"><i style="color: #fff;" class="fab fa-facebook fa-2x"></i></a></li>
                             <li><a href="#"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
                         </ul>
                     </div>

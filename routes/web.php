@@ -10,18 +10,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', [MainController::class, 'index'])->name('main');
+Route::get('pro-nas', [MainController::class, 'about'])->name('pro-nas');
 Route::get('estates', [\App\Http\Controllers\PostController::class, 'index'])->name('estates');
 Route::get('estate/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
 Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category');
@@ -35,6 +26,7 @@ Route::match(['post','get'], '/send', [ContactController::class, 'send'])->name(
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::delete('/deleteimage/{id}',[PostController::class,'deleteimage']);
 
 Route::group(['prefix'=>'inside', 'middleware'=>['auth']], function(){
     Route::get('/', [DashboardController::class, 'index'])->name('mainAdmin');

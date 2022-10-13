@@ -73,7 +73,7 @@
                                     {{ $user['email'] }}
                                 </td>
                                 <td>
-                                    <img class="img-thumbnail" src="{{ $user->img }}" alt="{{ $user->name }}"
+                                    <img class="img-thumbnail" src="{{ $user->avatar }}" alt="{{ $user->name }}"
                                          title="{{ $user->name }}" width="50" height="50">
                                 </td>
 

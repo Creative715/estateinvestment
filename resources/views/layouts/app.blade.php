@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('font/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 </head>
 <!-- Modal -->
 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,8 +68,8 @@
 </div>
 <div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
-<script src="{{ asset('/js/core.min.js') }}"></script>
-<script src="{{ asset('/js/script.js') }}"></script>
+<script src="{{ asset('js/core.min.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 
 </body>
 </html>

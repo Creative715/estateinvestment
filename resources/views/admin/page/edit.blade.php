@@ -43,7 +43,7 @@
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label>Назва Menu</label>
+                                        <label>Назва сторінки</label>
                                         <input type="text" name="title" value="{{ $page['title'] }}" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
@@ -66,7 +66,7 @@
                                         <input name="img" class="form-control" type="file" value="{{ $page->img }}">
                                     </div>
                                     <div class="form-group">
-                                        <label>Slug</label>
+                                        <label>Адреса сторінки</label>
                                         <input type="text" name="slug" class="form-control"  value="{{ $page['slug'] }}" placeholder="url" readonly>
                                     </div>
 

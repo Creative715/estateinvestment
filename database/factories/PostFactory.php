@@ -23,20 +23,18 @@ class PostFactory extends Factory
     {
         $title = $this->faker->sentence(6, true);
         $slug = Str::substr(Str::lower(preg_replace('/\s+/', '-', $title)), 0, -1);
-        $created =  $this->faker->dateTimeBetween('-21 days', '-2 days');
+        $created =  $this->faker->dateTimeBetween('-21 days', '-1 days');
         return [
             'title' => $this->faker->text(30),
             'category_id' => $this->faker->numberBetween( 1,  6),
             'city_id' => $this->faker->numberBetween( 1,  14),
-            'seo_title' => $this->faker->text(80),
-            'content' => $this->faker->paragraph(100, true),
-            'description' => $this->faker->paragraph(10, true),
-            'seo_description' => $this->faker->text(25),
+            'content' => $this->faker->paragraph(30, true),
+            'description' => $this->faker->text(25),
             'slug' => $slug,
             'created_at' => $created,
             'updated_at' => $created,
             'published' => 1,
-            'price' => $this->faker->randomElement([1000, 2000, 3000, 5000, 10000]),
+            'price' => $this->faker->randomElement([1000, 2000, 3000, 3500, 4000, 4200, 5000, 7100, 8100, 10000]),
         ];
     }
 }

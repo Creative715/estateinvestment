@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Page;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -21,9 +21,9 @@ class MainController extends Controller
         ]);
     }
 
-    public function category($slug)
+    public function about()
     {
-        $categories = Category::findBySlug($slug);
-        return view('app.category', compact('categories'));
+        $pages = Page::firstOrFail();
+        return view('app.page.page', compact('pages'));
     }
 }

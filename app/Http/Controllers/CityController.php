@@ -18,7 +18,7 @@ class CityController extends Controller
     public function city($slug)
     {
         $cities = City::findBySlug($slug);
-        $posts = $cities->posts()->paginate(10);
+        $posts = $cities->posts()->orderBy('created_at', 'desc')->paginate(10);
         return view('app.city.city', compact('cities','posts'));
     }
 }

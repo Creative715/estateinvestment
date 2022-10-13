@@ -51,12 +51,12 @@
                                         <input type="text" name="slug" class="form-control"  value="{{ $user['email']}}" placeholder="url" required>
                                     </div>
                                     <div class="form-group">
-                                        <img class="img-thumbnail" src="{{ $user->img }}" alt="{{ $user->name }}"
+                                        <img class="img-thumbnail" src="{{ $user->avatar }}" alt="{{ $user->name }}"
                                              title="{{ $user->name }}" width="150" height="auto">
                                     </div>
                                     <div class="form-group">
                                         <label>Аватар</label>
-                                        <input name="img" class="form-control" type="file" value="{{ $user->img }}">
+                                        <input name="img" class="form-control" type="file" value="{{ $user->avatar }}">
                                     </div>
 
                                 </div>

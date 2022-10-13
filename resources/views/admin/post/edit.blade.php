@@ -44,13 +44,8 @@
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label>Назва Menu</label>
+                                        <label>Назва нерухомості</label>
                                         <input type="text" name="title" value="{{ $post['title'] }}"
-                                               class="form-control" placeholder="Введіть назву" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Назва Seo</label>
-                                        <input type="text" name="seo_title" value="{{ $post['seo_title'] }}"
                                                class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
@@ -90,7 +85,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Вартість</label>
-                                        <input id="price" name="price" class="form-control" value="{{  $post->price }}">
+                                        <input type="text" id="price" name="price" class="form-control" value="{{  $post->price }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Опис сторінки (SEO)</label>
@@ -100,12 +95,17 @@
                                     </div>
                                     <div class="form-group">
                                         <img class="img-thumbnail" src="{{ $post->img }}" alt="{{ $post->title }}"
-                                             title="{{ $post->title }}" width="150" height="auto">
+                                             title="{{ $post->title }}" width="250" height="auto">
                                     </div>
                                     <div class="form-group">
-                                        <label>Зображення</label>
+                                        <label class="form-label" for="img">Головне зображення</label>
                                         <input name="img" class="form-control" type="file" value="{{ $post->img }}">
                                     </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="images[]">Додаткові зображення:</label>
+                                        <input type="file" class="form-control m-2" name="images[]" multiple>
+                                    </div>
+                                    <hr>
                                     <div class="form-group">
                                         <label>Адреса сторінки</label>
                                         <input type="text" name="slug" class="form-control" value="{{ $post['slug'] }}"
@@ -118,7 +118,28 @@
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-primary">Зберегти</button>
                                 </div>
+
                             </form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12"><h5>Додаткові зображення:</h5></div>
+                                    <div class="mt-4"></div>
+                                    @if (count($post->images)>0)
+                                        @foreach ($post->images as $img)
+                                            <div class="card col-md-2">
+
+                                                <form action="/deleteimage/{{ $img->id }}" method="post">
+                                                    <button class="btn text-danger">X</button>
+                                                    @csrf
+                                                    @method('delete')
+                                                </form>
+
+                                                <img src="/images/gallery/{{ $img->image }}" class="img-thumbnail" style="height: auto; max-width: 200px;" alt="" srcset="">
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

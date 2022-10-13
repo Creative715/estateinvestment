@@ -42,7 +42,7 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Назва Menu</label>
+                                        <label for="exampleInputEmail1">Назва сторінки</label>
                                         <input type="text" name="title" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
@@ -62,7 +62,7 @@
                                         <input name="img" class="form-control" type="file">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Slug</label>
+                                        <label for="exampleInputEmail1">Адреса сторінки</label>
                                         <input type="text" name="slug" class="form-control" placeholder="url" readonly>
                                     </div>
 

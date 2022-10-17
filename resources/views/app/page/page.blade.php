@@ -2,7 +2,7 @@
 @include('app.includes.header')
 @section('content')
     <div class="modal fade" id="ModalImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="min-width: 800px !important;" >
+        <div class="modal-dialog" style="min-width: 800px !important;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{ $pages->title }}</h5>
@@ -25,6 +25,7 @@
                 <h2 class="breadcrumbs-custom-title">{{ $pages->title }}</h2>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="{{ url('/') }}">Головна</a></li>
+                    <li class="active"><a href="{{ route('pro-nas') }}">Про нас</a></li>
                     <li class="active">{{ $pages->title }}</li>
                 </ul>
             </div>
@@ -35,17 +36,19 @@
             <div class="row row-40 flex-lg-row-reverse justify-content-xl-between">
                 <div class="col-xl-4">
                     <ul class="list-xl box-typography">
-                    <li>
-                        <a data-toggle="modal" data-target="#ModalImg" href="#">
-                            <img style="width: 800px; height: 470px;" class="img-thumbnail" src="{{ $pages->img ?? (asset('images/no-image.jpg')) }}"
-                                 alt="{{ $pages->title }}"/>
-                        </a>
-                    </li>
+                        <li>
+                            <a data-toggle="modal" data-target="#ModalImg" href="#">
+                                <img style="width: 400px; height: 250px;" class="img-thumbnail"
+                                     src="{{ $pages->img ?? (asset('images/no-image.jpg')) }}"
+                                     alt="{{ $pages->title }}"/>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-xl-8">
                     <ul class="list-xl box-typography">
                         <h2>{{ $pages->title }}</h2>
+                        <p>{!! $pages->intro !!}</p>
                         <p>{!! $pages->content !!}</p>
                         </li>
                     </ul>

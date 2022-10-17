@@ -5,6 +5,7 @@
         <section class="section section-sm section-first bg-default text-left">
             <div class="container">
                 <h2>Нерухомість в місті {{ $cities->title }}</h2>
+                {!! $cities->description !!}
                 <div class="row">
                     @foreach($posts as $post)
                         <div class="col-xl-6">

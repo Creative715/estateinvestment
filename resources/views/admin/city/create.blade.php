@@ -38,14 +38,25 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('city.store') }}" method="post">
+                            <form enctype="multipart/form-data" action="{{ route('city.store') }}" method="post">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Назва</label>
                                         <input type="text" name="title" class="form-control" id="title" placeholder="Введіть назву міста" required>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="description">Опис міста</label>
+                                        <textarea id="description" name="description" class="form-control" rows="4"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Зображення</label>
+                                        <input name="img" class="form-control" type="file">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">Адреса сторінки (генерується автоматично)</label>
+                                        <input id="slug" name="slug" class="form-control" readonly>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">

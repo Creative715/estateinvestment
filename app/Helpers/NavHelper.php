@@ -20,6 +20,15 @@ if (! function_exists('activeEestateLink')) {
     }
 }
 
+if (! function_exists('activePageLink')) {
+    function activePageLink (){
+        if((request()->is('page') or request()->is('page/*'))) {
+            return 'active';
+        }
+        return '';
+    }
+}
+
 if (! function_exists('activeCategoryLink')) {
     function activeCategoryLink (){
         if((request()->is('category') or request()->is('category/*'))) {

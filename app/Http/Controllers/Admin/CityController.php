@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CityController extends Controller
 {
@@ -15,7 +16,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = City::orderBy('created_at', 'desc')->get();
+        $cities = City::all();
 
         return view('admin.city.index', [
             'cities' => $cities
@@ -35,14 +36,17 @@ class CityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $city = new City();
-        $city->title = $request->title;
-        $city->slug = $request->slug;
+        $city = City::create($request->all());
+        if ($request->file('img')) {
+            $path = Storage::putFile('public', $request->file('img'));
+            $url = Storage::url($path);
+            $city->img = $url;
+        }
         $city->save();
 
         return redirect('inside/city')->withSuccess('Категорія успішно додана!');
@@ -51,7 +55,7 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param \App\Models\City $city
      * @return \Illuminate\Http\Response
      */
     public function show(City $city)
@@ -62,7 +66,7 @@ class CityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param \App\Models\City $city
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(City $city)
@@ -75,14 +79,20 @@ class CityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\City  $city
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\City $city
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, City $city)
     {
-        $city->title = $request->title;
-        $city->slug = $request->slug;
+        $city->update($request->all());
+
+        if ($request->file('img')) {
+            $path = Storage::putFile('public', $request->file('img'));
+            $url = Storage::url($path);
+            $city->img = $url;
+        }
+
         $city->save();
 
         return redirect('inside/city')->withSuccess('Категорія успішно оновлена!');
@@ -91,7 +101,7 @@ class CityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\City  $city
+     * @param \App\Models\City $city
      * @return \Illuminate\Http\Response
      */
     public function destroy(City $city)

@@ -15,7 +15,7 @@ class ContactController extends Controller
         if ($request->method() == 'POST'){
             $body = "<h2>Ім'я: {$request->input('name')}</h2>";
             $body .= "<h2>Номер телефону: {$request->input('phone')}</h2>";
-            Mail::to('sale@estateinvestment.com.ua')->send(new PhoneRequest($body));
+            Mail::to('admine@estateinvestment.com.ua')->send(new PhoneRequest($body));
             return redirect('/send');
         }
 
@@ -29,7 +29,7 @@ class ContactController extends Controller
             $question .= "<h3>Номер телефону: {$request->input('phone')}</h3>";
             $question .= "<h3>Email: {$request->input('email')}</h3>";
             $question .= "<p>Запитання:<br>" . nl2br($request->input('massage')) . "</p>";
-            Mail::to('sale@estateinvestment.com.ua')->send(new QuestionRequest($question));
+            Mail::to('admine@estateinvestment.com.ua')->send(new QuestionRequest($question));
             return redirect('/send');
         }
 

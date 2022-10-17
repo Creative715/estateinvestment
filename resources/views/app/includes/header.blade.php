@@ -73,6 +73,8 @@
                             <li class="rd-nav-item {{ $mainLink }}"><a class="rd-nav-link"
                                                                        href="{{ url('/') }}">Головна</a>
                             </li>
+                            <li class="rd-nav-item {{ $pageLink }}"><a class="rd-nav-link" href="{{ route('pro-nas') }}">Про нас</a>
+                            </li>
                             <li class="rd-nav-item {{ $estateLink }}"><a class="rd-nav-link"
                                                                          href="{{ route('estates') }}">Вся
                                     нерухомість</a>

@@ -69,6 +69,9 @@
                         <ul class="rd-navbar-nav">
                             <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url('/') }}">Головна</a>
                             </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('pro-nas') }}">Про
+                                    нас</a>
+                            </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#new">Нові надходження</a>
                             </li>
                             <li class="rd-nav-item"><a class="rd-nav-link" href="#catalogue">Каталог об'єктів</a>

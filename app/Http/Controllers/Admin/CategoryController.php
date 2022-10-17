@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class CategoryController extends Controller
@@ -41,9 +42,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category();
-        $category->title = $request->title;
-        $category->slug = $request->slug;
+        $category = Category::create($request->all());
+
+        if ($request->file('img')) {
+            $path = Storage::putFile('public', $request->file('img'));
+            $url = Storage::url($path);
+            $category->img = $url;
+        }
+
         $category->save();
 
         return redirect('inside/category')->withSuccess('Категорія успішно додана!');
@@ -82,8 +88,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->title = $request->title;
-        $category->slug = $request->slug;
+        $category->update($request->all());
+
+        // Images
+        if ($request->file('img')) {
+            $path = Storage::putFile('public', $request->file('img'));
+            $url = Storage::url($path);
+            $category->img = $url;
+        }
+
         $category->save();
 
         return redirect('inside/category')->withSuccess('Категорія успішно оновлена!');

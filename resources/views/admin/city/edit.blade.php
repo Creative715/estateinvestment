@@ -38,7 +38,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('city.update', $city['id']) }}" method="post">
+                            <form enctype="multipart/form-data" action="{{ route('city.update', $city['id']) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
@@ -47,7 +47,19 @@
                                         <input type="text" name="title" value="{{ $city['title'] }}" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Slug</label>
+                                        <img class="img-thumbnail" src="{{ $city->img }}" alt="{{ $city->title }}"
+                                             title="{{ $city->title }}" width="250" height="auto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Опис міста</label>
+                                        <textarea id="description" name="description" class="form-control" rows="4">{{ $city['description'] }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="img">Зображення</label>
+                                        <input name="img" class="form-control" type="file" value="{{ $city->img }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">Адреса сторінки</label>
                                         <input type="text" name="slug" class="form-control"  value="{{ $city['slug']}}" placeholder="url" required>
                                     </div>
 

@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function category($slug)
     {
         $categories = Category::findBySlug($slug);
-        $posts = $categories->posts()->orderBy('created_at', 'desc')->paginate(10);
+        $posts = $categories->posts()->orderBy('created_at', 'desc')->with('city')->paginate(10);
         return view('app.category.category', compact('categories','posts'));
     }
 }

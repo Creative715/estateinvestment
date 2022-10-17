@@ -12,6 +12,10 @@
 
                         <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
+                                <a href="{{ route('city.more', $city->slug) }}"><img style="width: 500px; height: 200px"
+                                                                                     class="img-thumbnail"
+                                                                                     src="{{ $city->img ?? (asset('images/no-image.jpg')) }}"
+                                                                                     alt="{{ $city->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a href="{{ route('city.more', $city->slug) }}">{{ $city->title }}</a></h5>
                                 <p class="box-icon-classic-text">{!! $city->getContentPreview() !!} </p>
                             </div>

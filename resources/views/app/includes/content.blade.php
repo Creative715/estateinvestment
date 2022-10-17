@@ -136,7 +136,8 @@
                                     клієнтів. Наша команда – це професіоналізм, досвід, вміння підібрати кращий варіант
                                     саме для Вас.</p>
                                 <div class="group-md group-middle"><a class="button button-secondary button-pipaluk"
-                                                                      href="{{ route('pro-nas') }}">Докладніше</a></div>
+                                                                      href="{{ url('/page/pro-nas-nasa-diialnist') }}">Докладніше</a>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="tabs-7-2">
                                 <p>Як ми вибираємо об’єкти нерухомості?<br>
@@ -145,7 +146,8 @@
                                     відправляємось на об’єкт. Ретельно дивимося на нього. Звіряючи все описане в рекламі
                                     з реальністю.</p>
                                 <div class="group-md group-middle"><a class="button button-secondary button-pipaluk"
-                                                                      href="{{ route('pro-nas') }}">Докладніше</a></div>
+                                                                      href="{{ url('/page/pro-nas-nasa-diialnist') }}">Докладніше</a>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="tabs-7-3">
                                 <p>ЧОМУ НАМ ДОВІРЯЮТЬ КЛІЄНТ?<br>
@@ -153,10 +155,12 @@
                                     Надаємо актуальну інформацію<br>
 
                                     У своїй роботі ми прагнемо задовольнити побажання всіх сторін угоди. Завдяки широкій
-                                    базі нерухомості, ми пропонуємо оптимальні варіанти в співвідношенні ціна / якість. Ваш комфорт – наша головна задача!
+                                    базі нерухомості, ми пропонуємо оптимальні варіанти в співвідношенні ціна / якість.
+                                    Ваш комфорт – наша головна задача!
                                 </p>
                                 <div class="group-md group-middle"><a class="button button-secondary button-pipaluk"
-                                                                      href="{{ route('pro-nas') }}">Докладніше</a></div>
+                                                                      href="{{ url('/page/pro-nas-nasa-diialnist') }}">Докладніше</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,14 +176,17 @@
             @foreach($categories as $category)
                 <div class="col-sm-6 col-lg-4">
                     <article class="box-icon-classic">
-
                         <div
                             class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
+                                <a href="{{ route('category.more', $category->slug) }}"><img
+                                        style="width: 500px; height: 200px" class="img-thumbnail"
+                                        src="{{ $category->img ?? (asset('images/no-image.jpg')) }}"
+                                        alt="{{ $category->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a
                                         href="{{ route('category.more', $category->slug) }}">{{ $category->title }}</a>
                                 </h5>
-                                <p class="box-icon-classic-text">{!! $category->getContentPreview() !!} </p>
+                                <p class="box-icon-classic-text"></p>
                             </div>
                         </div>
                     </article>
@@ -234,6 +241,10 @@
                         <div
                             class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
+                                <a href="{{ route('city.more', $city->slug) }}"><img style="width: 500px; height: 200px"
+                                                                                     class="img-thumbnail"
+                                                                                     src="{{ $city->img ?? (asset('images/no-image.jpg')) }}"
+                                                                                     alt="{{ $city->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a
                                         href="{{ route('city.more', $city->slug) }}">{{ $city->title }}</a></h5>
                                 <p class="box-icon-classic-text">{!! $city->getContentPreview() !!} </p>

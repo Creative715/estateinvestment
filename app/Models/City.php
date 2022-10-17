@@ -5,11 +5,14 @@ namespace App\Models;
 use App\Helpers\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class City extends Model
 {
     use HasFactory, HasSlug;
+
+    protected $guarded = [];
 
     protected function getSlugOptions()
     {
@@ -19,9 +22,9 @@ class City extends Model
             ->saveSlugTo('slug');
     }
     public function getContentPreview(){
-        return Str::limit($this->description, 80);
+        return Str::limit($this->description, 200);
     }
-    public function posts()
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }

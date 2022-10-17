@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
     public function  activeLinks() {
         View::composer('app.includes.header', function($view) {
             $view->with('mainLink', request()->is('/') ? 'active' : '');
+            $view->with('pageLink', (request()->is('pro-nas') or  request()->is('page/*')) ? 'active' : '');
             $view->with('estateLink', (request()->is('estates') or  request()->is('estate/*')) ? 'active' : '');
             $view->with('categoryLink', (request()->is('category') or  request()->is('category/*')) ? 'active' : '');
             $view->with('cityLink', (request()->is('city') or  request()->is('city/*')) ? 'active' : '');

@@ -8,49 +8,49 @@
                             <h6 class="text-spacing-100 text-uppercase">Контактна інформація</h6>
                             <ul class="footer-contacts d-inline-block d-sm-block">
                                 <li>
+                                    <p>MARIO Spolka z o.o.</p>
+                                    <p>30-717 Krakow, ul. Koszykarska 27B/26</p>
+                                    <p>Nip.6772395303 , Regon: 363037832</p>
+                                </li>
+                                <li>
                                     <div class="unit">
                                         <div class="unit-body"><a href="tel:+48575707823"><i style="color: #01B3A7;"
                                                                                              class="fas fa-phone"></i>
-                                                +48(575)70-78-23</a></div>
+                                                +48(575)70-78-23</a>
+                                            <div class="my-3"></div>
+                                            <a href="tel:+380684314321"><i style="color: #01B3A7;"
+                                                                           class="fas fa-phone"></i>
+                                                +38(068)431-43-21</a>
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="unit">
                                         <div class="unit-body"><a class="link-aemail"
-                                                                  href="mailto:info@estateinvestment.com.ua"><i
+                                                                  href="mailto:admine@estateinvestment.com.ua"><i
                                                     style="color: #01B3A7;" class="fas fa-envelope"></i>
                                                 admine@estateinvestment.com.ua</a></div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="unit">
-                                        <div class="unit-left"></div>
-                                        <div class="unit-body"></div>
-                                    </div>
-                                </li>
+                                <article class="post post-minimal-2">
+                                    <hr>
+                                </article>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
-                    <div class="oh-desktop">
-                        <div class="wow slideInDown" data-wow-delay="0s">
-                            <h6 class="text-spacing-100 text-uppercase">Умови оренди</h6>
-                            <article class="post post-minimal-2">
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit?</p>
-                            </article>
-                            <article class="post post-minimal-2">
-                                <hr>
-                            </article>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-sm-11 col-md-7 col-lg-5 col-xl-4">
                     <div class="oh-desktop">
                         <div class="wow slideInLeft" data-wow-delay="0s">
                             <h6 class="text-spacing-100 text-uppercase">Правова інформація</h6>
                             <article class="post post-minimal-2">
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sit?</p>
+                                <p>Ця Політика обробки персональних даних складена відповідно до вимог закону і визначає
+                                    порядок обробки персональних даних... </p>
+                                <a class="link-classic"
+                                   href="{{ url('/page/pravova-informaciia') }}">Докладніше >>></a>
                             </article>
 
                             <article class="post post-minimal-2">

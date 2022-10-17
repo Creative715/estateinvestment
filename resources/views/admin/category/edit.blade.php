@@ -38,17 +38,21 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ route('category.update', $category['id']) }}" method="post">
+                            <form enctype="multipart/form-data" action="{{ route('category.update', $category['id']) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Назва</label>
+                                        <label for="title">Назва</label>
                                         <input type="text" name="title" value="{{ $category['title'] }}" class="form-control" placeholder="Введіть назву" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Slug</label>
-                                        <input type="text" name="slug" class="form-control"  value="{{ $category['slug']}}" placeholder="url" required>
+                                        <img class="img-thumbnail" src="{{ $category->img }}" alt="{{ $category->title }}"
+                                             title="{{ $category->title }}" width="250" height="auto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="img">Зображення</label>
+                                        <input name="img" class="form-control" type="file" value="{{ $category->img }}">
                                     </div>
 
                                 </div>

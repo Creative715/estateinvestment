@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('pro-nas', [MainController::class, 'about'])->name('pro-nas');
+Route::get('pro-nas', [\App\Http\Controllers\PageController::class, 'index'])->name('pro-nas');
+Route::get('page/{slug}', [\App\Http\Controllers\PageController::class, 'page'])->name('page.more');
 Route::get('estates', [\App\Http\Controllers\PostController::class, 'index'])->name('estates');
 Route::get('estate/{slug}', [\App\Http\Controllers\PostController::class, 'post'])->name('post.more');
 Route::get('category', [\App\Http\Controllers\CategoryController::class, 'index'])->name('category');

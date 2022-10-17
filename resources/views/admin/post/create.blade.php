@@ -70,19 +70,19 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="content">Текст сторінки</label>
+                                        <label for="exampleInputEmail1">Текст сторінки</label>
                                         <textarea id="content" name="content" class="form-control" rows="4"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="price">Вартість</label>
+                                        <label for="exampleInputEmail1">Вартість</label>
                                         <input type="text" id="price" name="price" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="description">Опис сторінки (SEO)</label>
+                                        <label for="exampleInputEmail1">Опис сторінки (SEO)</label>
                                         <input type="text" name="description" class="form-control" id="exampleInputName" placeholder="Введіть опис" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="img">Головне зображення</label>
+                                        <label for="exampleInputEmail1">Головне зображення</label>
                                         <input name="img" class="form-control" type="file">
                                     </div>
                                     <div class="form-group">

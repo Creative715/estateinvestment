@@ -14,6 +14,12 @@ class PageController extends Controller
     }
 
 
+    public function about()
+    {
+        $pages = Page::firstOrFail();
+        return view('app.page.page', compact('pages'));
+    }
+
     public function page($slug)
     {
         $pages = Page::findBySlug($slug);

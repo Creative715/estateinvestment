@@ -22,7 +22,7 @@ class City extends Model
             ->saveSlugTo('slug');
     }
     public function getContentPreview(){
-        return Str::limit($this->description, 200);
+        return Str::limit($this->description, 100);
     }
     public function posts(): HasMany
     {

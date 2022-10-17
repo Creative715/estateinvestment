@@ -47,8 +47,7 @@
                         <div class="wow slideInLeft" data-wow-delay="0s">
                             <h6 class="text-spacing-100 text-uppercase">Правова інформація</h6>
                             <article class="post post-minimal-2">
-                                <p>Ця Політика обробки персональних даних складена відповідно до вимог закону і визначає
-                                    порядок обробки персональних даних... </p>
+                                <p>Ця Політика обробки персональних даних складена відповідно до вимог закону  і визначає порядок обробки персональних даних... </p>
                                 <a class="link-classic"
                                    href="{{ url('/page/pravova-informaciia') }}">Докладніше >>></a>
                             </article>
@@ -68,8 +67,8 @@
                 <div class="col-sm-6 col-md-4 text-sm-right text-md-right">
                     <div>
                         <ul class="list-inline list-inline-sm">
-                            <li><a href="#"><i style="color: #fff;" class="fab fa-facebook fa-2x"></i></a></li>
-                            <li><a href="#"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
+                              <li><a target="_blanck" href="https://www.facebook.com/people/%D0%95stateinvestment/100087105272051/"><i style="color: #fff;" class="fab fa-facebook fa-2x"></i></a></li>
+                            <li><a target="_blanck" href="https://www.instagram.com/estateinvestment/"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
                         </ul>
                     </div>
                 </div>

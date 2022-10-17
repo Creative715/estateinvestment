@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class Category extends Model
 {
     use HasFactory, HasSlug;
-
+    
     protected $guarded = [];
 
     protected function getSlugOptions()

@@ -66,8 +66,8 @@
                 <div class="rd-navbar-main">
                     <div class="rd-navbar-nav-wrap">
                         <ul class="list-inline list-inline-md">
-                            <li><a href="#"><i style="color: #fff;" class="fab fa-facebook fa-2x"></i></a></li>
-                            <li><a href="#"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
+                            <li><a target="_blanck" href="https://www.facebook.com/people/%D0%95stateinvestment/100087105272051/"><i style="color: #fff;" class="fab fa-facebook fa-2x"></i></a></li>
+                            <li><a target="_blanck" href="https://www.instagram.com/estateinvestment/"><i style="color: #fff;" class="fab fa-instagram fa-2x"></i></a></li>
                         </ul>
                         <ul class="rd-navbar-nav">
                             <li class="rd-nav-item {{ $mainLink }}"><a class="rd-nav-link"

@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@include('app.includes.header')
 @section('content')
+    @include('app.includes.header')
     <div class="container">
 <section id="page" style="min-height: 700px;" class="section section-sm">
     <div class="container">

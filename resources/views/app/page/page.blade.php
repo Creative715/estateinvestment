@@ -1,6 +1,6 @@
 @extends('layouts.app', ['title' => $pages->title, 'description' => $pages->description])
-@include('app.includes.header')
 @section('content')
+    @include('app.includes.header')
     <div class="modal fade" id="ModalImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" style="min-width: 800px !important;">
             <div class="modal-content">

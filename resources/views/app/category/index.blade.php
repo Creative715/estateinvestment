@@ -1,6 +1,6 @@
 @extends('layouts.app', ['title' => "Категорії об'єктів", 'description' => 'Придбати нерухомість в Польщі'])
-@include('app.includes.header')
 @section('content')
+    @include('app.includes.header')
     <div class="container">
 <section id="category" class="section section-sm">
     <div class="container">

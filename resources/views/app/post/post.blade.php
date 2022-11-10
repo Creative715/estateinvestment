@@ -2,7 +2,7 @@
 @section('content')
     @include('app.includes.header')
     <div class="modal fade" id="ModalImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="min-width: 800px !important;" >
+        <div class="modal-dialog" style="min-width: 800px !important;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{ $posts->title }}</h5>
@@ -47,12 +47,13 @@
                     <ul class="list-xl box-typography">
                         <li>
                             <a data-toggle="modal" data-target="#ModalImg" href="#">
-                            <img style="width: 800px; height: 470px;" class="img-thumbnail" src="{{ $posts->img ?? (asset('images/no-image.jpg')) }}"
-                                 alt="{{ $posts->title }}"/>
+                                <img style="width: 800px; height: 470px;" class="img-thumbnail"
+                                     src="{{ $posts->img ?? (asset('images/no-image.jpg')) }}"
+                                     alt="{{ $posts->title }}"/>
                             </a>
                         </li>
-                            <h2>{{ $posts->title }}</h2>
-                            <p>{!! $posts->content !!}</p>
+                        <h2>{{ $posts->title }}</h2>
+                        <p>{!! $posts->content !!}</p>
                         </li>
                     </ul>
                 </div>
@@ -64,15 +65,20 @@
             <h3>----------------------------------------------</h3>
         </div>
         <!-- Owl Carousel-->
-        <div class="owl-carousel owl-classic owl-timeline" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="4" data-margin="30" data-autoplay="false" data-nav="true" data-dots="true">
+        <div class="owl-carousel owl-classic owl-timeline" data-items="1" data-md-items="2" data-lg-items="3"
+             data-xl-items="4" data-margin="30" data-autoplay="false" data-nav="true" data-dots="true">
             @if (count($posts->images)>0)
                 @foreach ($posts->images as $img)
                     <div class="owl-item">
                         <article class="thumbnail thumbnail-mary">
                             <div class="thumbnail-mary-figure">
-                                <img src="/images/gallery/{{ $img->image }}" alt="" style="with:420px; height: 308px;" srcset="">
+                                <img src="/images/gallery/{{ $img->image }}" alt="" style="with:420px; height: 308px;"
+                                     srcset="">
                             </div>
-                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="/images/gallery/{{ $img->image }}" alt="нерухомість у Польщі" width="420" height="308"/></a>
+                            <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60"
+                                                                   href="/images/gallery/{{ $img->image }}"
+                                                                   alt="нерухомість у Польщі" width="420"
+                                                                   height="308"/></a>
                             </div>
                         </article>
                     </div>

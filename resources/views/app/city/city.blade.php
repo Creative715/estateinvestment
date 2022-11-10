@@ -10,7 +10,8 @@
                     @foreach($posts as $post)
                         <div class="col-xl-6">
                             <div class="card-body">
-                                <img style="height: 350px; width: 550px;" class="img-thumbnail" src="{{ $post->img ?? asset('/images/no-image.jpg') }}" alt="{{ $post->title }}">
+                                <img class="img-thumbnail img-prev"
+                                     src="{{ $post->img ?? asset('/images/no-image.jpg') }}" alt="{{ $post->title }}">
                                 <div class="card-title">
                                     <div class="mt-4"></div>
                                     <h4><a href="{{ route('post.more', $post->slug) }}">{{ $post->title }}</a></h4>
@@ -19,10 +20,12 @@
                                 <h4>Ціна: {{ $post->price }}</h4>
                                 <h5>Додано: {{ $post->createdAtForHumans() }}</h5>
                                 <div class="mt-4">
-                                    <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}"">
-                                            {{$post->city->title}}</a></h5>
+                                    <h5 class="product-big-title">Місто: <a
+                                            href="{{ route('city.more', $post->city->slug) }}"">
+                                        {{$post->city->title}}</a></h5>
                                 </div>
-                                <a class="button button-black-outline button-ujarak" href="{{ route('post.more', $post->slug) }}">Докладніше</a>
+                                <a class="button button-black-outline button-ujarak"
+                                   href="{{ route('post.more', $post->slug) }}">Докладніше</a>
                             </div>
                         </div>
                     @endforeach
@@ -32,6 +35,6 @@
             </div>
         </section>
     </div>
-        <hr>
+    <hr>
     @include('app.includes.footer')
 @endsection

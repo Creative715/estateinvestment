@@ -28,12 +28,12 @@ class Post extends Model
 
     public function scopeAllFront($query)
     {
-        return $query->with('city')->orderBy('created_at', 'desc')->where('published', '1')->take('4')->get();
+        return $query->with('city')->latest()->where('published', '1')->limit('4')->get();
     }
 
     public function scopeAllPaginate($query, $numbers)
     {
-        return $query->with('city')->orderBy('created_at', 'desc')->where('published', '1')->paginate($numbers);
+        return $query->with('city')->latest()->where('published', '1')->paginate($numbers);
     }
 
     public function getContentPreview()

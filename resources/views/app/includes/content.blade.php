@@ -179,8 +179,7 @@
                         <div
                             class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
-                                <a href="{{ route('category.more', $category->slug) }}"><img
-                                        style="width: 500px; height: 200px" class="img-thumbnail"
+                                <a href="{{ route('category.more', $category->slug) }}"><img class="img-thumbnail img-prev-m"
                                         src="{{ $category->img ?? (asset('images/no-image.jpg')) }}"
                                         alt="{{ $category->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a
@@ -200,7 +199,7 @@
         <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Нові надходження</span></h3>
         <div class="row row-sm row-40 row-md-50">
             @foreach($posts as $post)
-                <div class="col-sm-6 col-md-12 wow fadeInRight">
+                <div class="col-sm-12 col-md-12 wow fadeInRight">
                     <article class="product-big">
                         <div class="unit flex-column flex-md-row align-items-md-stretch">
                             <div class="unit-left"><a class="product-big-figure" href="#"><img
@@ -241,8 +240,7 @@
                         <div
                             class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
-                                <a href="{{ route('city.more', $city->slug) }}"><img style="width: 500px; height: 200px"
-                                                                                     class="img-thumbnail"
+                                <a href="{{ route('city.more', $city->slug) }}"><img class="img-thumbnail img-prev-m"
                                                                                      src="{{ $city->img ?? (asset('images/no-image.jpg')) }}"
                                                                                      alt="{{ $city->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a

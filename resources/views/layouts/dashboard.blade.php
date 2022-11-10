@@ -6,30 +6,33 @@
     <title> Адмін панель - @yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/dashboard/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="/dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet"
+          href="{{ asset('/dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="/dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="/dashboard/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/dashboard/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="/dashboard/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
-    <link rel="stylesheet" href="/dashboard/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{ asset('/dashboard/plugins/summernote/summernote-bs4.min.css') }}">
     <style>
-        .ck.ck-editor__editable_inline > :last-child{
+        .ck.ck-editor__editable_inline > :last-child {
             min-height: 300px;
         }
-        .ck.ck-editor__editable_inline > :first-child{
+
+        .ck.ck-editor__editable_inline > :first-child {
             min-height: 300px;
         }
     </style>
@@ -39,7 +42,8 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('/dashboard/dist/img/LOGO1.jpg') }}" alt="AdminLTELogo" height="80" width="180">
+        <img class="animation__shake" src="{{ asset('/dashboard/dist/img/LOGO1.jpg') }}" alt="AdminLTELogo" height="80"
+             width="180">
     </div>
 
     <!-- Navbar -->
@@ -56,18 +60,18 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                            {{ Auth::user()->name }}
+                    {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
+                       onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                     {{ __('Logout') }}
-                 </a>
+                        {{ __('Logout') }}
+                    </a>
 
-                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                     @csrf
-                 </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </li>
             <!-- Notifications Dropdown Menu -->
@@ -85,7 +89,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ route('mainAdmin') }}" class="brand-link">
-            <img src="{{ asset('/dashboard/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="{{ asset('/dashboard/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Адмін панель</span>
         </a>
 
@@ -94,7 +99,8 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ Auth::user()->avatar }}" class="img-circle elevation-2" title="{{ Auth::user()->name }}" alt="{{ Auth::user()->name }}">
+                    <img src="{{ Auth::user()->avatar }}" class="img-circle elevation-2"
+                         title="{{ Auth::user()->name }}" alt="{{ Auth::user()->name }}">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
@@ -104,7 +110,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
@@ -158,12 +165,12 @@
                                     <p>Додати категорію</p>
                                 </a>
                             </li>
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="{{ route('category.edit/{id}') }}" class="nav-link">--}}
-{{--                                    <i class="far fa-arrow-alt-circle-right nav-icon"></i>--}}
-{{--                                    <p>Редагувати категорію</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
+                            {{--                            <li class="nav-item">--}}
+                            {{--                                <a href="{{ route('category.edit/{id}') }}" class="nav-link">--}}
+                            {{--                                    <i class="far fa-arrow-alt-circle-right nav-icon"></i>--}}
+                            {{--                                    <p>Редагувати категорію</p>--}}
+                            {{--                                </a>--}}
+                            {{--                            </li>--}}
                         </ul>
                     </li>
                     <li class="nav-item menu">
@@ -245,26 +252,30 @@
             <b><a target="_blank" href="/">На сайт</a></b>
             <!-- hit.ua -->
             <a href='https://hit.ua/?x=23407' rel="nofollow" target='_blank'>
-                <script> Cd=document;Cr="&"+Math.random();Cp="&s=1";
-                    Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
-                    Cp+="&t="+(new Date()).getTimezoneOffset();
-                    if(self!=top)Cp+="&f=1";
+                <script> Cd = document;
+                    Cr = "&" + Math.random();
+                    Cp = "&s=1";
+                    Cd.cookie = "b=b";
+                    if (Cd.cookie) Cp += "&c=1";
+                    Cp += "&t=" + (new Date()).getTimezoneOffset();
+                    if (self != top) Cp += "&f=1";
                 </script>
                 <script>
-                    if(navigator.javaEnabled())Cp+="&j=1";
+                    if (navigator.javaEnabled()) Cp += "&j=1";
                 </script>
                 <script>
-                    if(typeof(screen)!='undefined')Cp+="&w="+screen.width+"&h="+
-                        screen.height+"&d="+(screen.colorDepth?screen.colorDepth:screen.pixelDepth);
+                    if (typeof (screen) != 'undefined') Cp += "&w=" + screen.width + "&h=" +
+                        screen.height + "&d=" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth);
                 </script>
                 <script>
-                    Cd.write("<img src='//c.hit.ua/hit?i=23407&g=0&x=2"+Cp+Cr+
-                        "&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
-                        "' border='0' wi"+"dth='1' he"+"ight='1'/>");
+                    Cd.write("<img src='//c.hit.ua/hit?i=23407&g=0&x=2" + Cp + Cr +
+                        "&r=" + escape(Cd.referrer) + "&u=" + escape(window.location.href) +
+                        "' border='0' wi" + "dth='1' he" + "ight='1'/>");
                 </script>
                 <noscript>
-                    <img src='//c.hit.ua/hit?i=23407&amp;g=0&amp;x=2' alt="estates" />
-                </noscript></a>
+                    <img src='//c.hit.ua/hit?i=23407&amp;g=0&amp;x=2' alt="estates"/>
+                </noscript>
+            </a>
             <!-- / hit.ua -->
         </div>
     </footer>
@@ -311,7 +322,7 @@
 <script src="{{ asset('dashboard/ckfinder/ckfinder.js') }}"></script>
 <script type="text/javascript">
     ClassicEditor
-        .create( document.querySelector( '#content' ), {
+        .create(document.querySelector('#content'), {
             ckfinder: {
                 uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
             },
@@ -354,10 +365,10 @@
                     'mergeTableCells'
                 ]
             },
-        } )
-        .catch( function( error ) {
-            console.error( error );
-        } );
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
 
 </script>
 

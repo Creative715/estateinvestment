@@ -8,7 +8,7 @@
                 @foreach($posts as $post)
                     <div class="col-xl-6">
                         <div class="card-body">
-                            <img style="height: 350px; width: 550px;" class="img-thumbnail" src="{{ $post->img ?? asset('/images/no-image.jpg') }}"
+                            <img class="img-thumbnail img-prev" src="{{ $post->img ?? asset('/images/no-image.jpg') }}"
                                  alt="{{ $post->title }}">
                             <div class="mt-4"></div>
                             <div class="card-title"><h4><a
@@ -17,7 +17,8 @@
                             <h4>Ціна: {{ $post->price }}</h4>
                             <h5>Додано: {{ $post->createdAtForHumans() }}</h5>
                             <div class="mt-4">
-                                <h5 class="product-big-title">Місто: <a href="{{ route('city.more', $post->city->slug) }}">
+                                <h5 class="product-big-title">Місто: <a
+                                        href="{{ route('city.more', $post->city->slug) }}">
                                         {{$post->city->title}}</a></h5>
                             </div>
                             <a class="button button-black-outline button-ujarak"

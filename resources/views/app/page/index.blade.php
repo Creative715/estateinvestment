@@ -12,7 +12,8 @@
 
                         <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
                             <div class="unit-body">
-                                <a href="{{ route('page.more', $page->slug) }}"><img style="width: 500px; height: 200px"  class="img-thumbnail" src="{{ $page->img ?? (asset('images/no-image.jpg')) }}" alt="{{ $page->title }}"></a>
+                                <a href="{{ route('page.more', $page->slug) }}"><img
+                                                class="img-thumbnail img-prev-m" src="{{ $page->img ?? (asset('images/no-image.jpg')) }}" alt="{{ $page->title }}"></a>
                                 <h5 class="box-icon-classic-title"><a href="{{ route('page.more', $page->slug) }}">{{ $page->title }}</a></h5>
                                 <p class="box-icon-classic-text">{!! $page->getContentPreview() !!} </p>
                             </div>

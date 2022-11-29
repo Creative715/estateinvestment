@@ -47,7 +47,7 @@
                     <ul class="list-xl box-typography">
                         <li>
                             <a data-toggle="modal" data-target="#ModalImg" href="#">
-                                <img style="width: 800px; height: 470px;" class="img-thumbnail"
+                                <img style="width: 800px; height: auto;" class="img-thumbnail"
                                      src="{{ $posts->img ?? (asset('images/no-image.jpg')) }}"
                                      alt="{{ $posts->title }}"/>
                             </a>

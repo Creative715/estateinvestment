@@ -1,60 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://promoter.net.ua/</loc>
+        <loc>https://estateinvestment.com.ua/</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles</loc>
+        <loc>https://estateinvestment.com.ua/category</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/cutlivii-dizain-proti-adaptivnogo-yakii-krashhii-vibir-dlya-dizaineriv.html</loc>
+        <loc>https://estateinvestment.com.ua/category/doma-ta-villi</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/do-livewire-dodana-gidtrimka-zavantazennya-failiv.html</loc>
+        <loc>https://estateinvestment.com.ua/category/kvartiri</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/kaskadni-tablici-stiliv-css-verstka.html</loc>
+        <loc>https://estateinvestment.com.ua/category/novobudovi</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/larevel-auth-perenapravlennya.html</loc>
+        <loc>https://estateinvestment.com.ua/category/orenda-zitla</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/pocnit-koduvannya-za-liceni-sekundi-na-g.html</loc>
+        <loc>https://estateinvestment.com.ua/category/pridbannia-neruxomosti</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/sesiyi-v-php.html</loc>
+        <loc>https://estateinvestment.com.ua/category/zemelni-dilianki</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/tipi-danix-v-php.html</loc>
+        <loc>https://estateinvestment.com.ua/city</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/vibirajemo-yii2-abo-laravel.html</loc>
+        <loc>https://estateinvestment.com.ua/city/bilostok</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/zagalna-sxema-roboti-internet-magazinu.html</loc>
+        <loc>https://estateinvestment.com.ua/city/censtoxova</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/articles/zapusk-sistemi-moduliv-sass.html</loc>
+        <loc>https://estateinvestment.com.ua/city/gdansk</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category</loc>
+        <loc>https://estateinvestment.com.ua/city/glivice</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/dizain.html</loc>
+        <loc>https://estateinvestment.com.ua/city/katovice</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/laravel.html</loc>
+        <loc>https://estateinvestment.com.ua/city/kelci</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/php.html</loc>
+        <loc>https://estateinvestment.com.ua/city/krakiv</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/programuvanya.html</loc>
+        <loc>https://estateinvestment.com.ua/city/krakiv?page=1</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/verstka.html</loc>
+        <loc>https://estateinvestment.com.ua/city/krakiv?page=2</loc>
     </url>
     <url>
-        <loc>https://promoter.net.ua/category/yii2.html</loc>
+        <loc>https://estateinvestment.com.ua/city/liublin</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/poznan</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/radom</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/shhecin</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/sosnovec</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/varsava</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/vroclav</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/city/xolm</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/dizainerska-kvartira-u-krakovi-na-prodaz</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-11</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-3</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-35</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-36</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-40</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kotedzi-u-krakovi-po-vul-paszkowskiego-pekowicka-41</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-23-u-novobudovi-na-bagrax-krakiv</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-5-u-novobudovi-na-bagrax-krakiv</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-6-unovobudovi-na-bagrax-krakiv</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-68-na-bagrax-u-krakovi-zi-znizkoiu</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-7-u-novobudovi-na-bagrax-krakiv</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-u-novobudovi-mkrakiv-vul-dominikanska</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/kvartira-u-zdanii-novobudovi-po-vul-dominikanska</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/orenda-dvokimnatnoyi-kvartiri-dlia-simyi</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/orenda-dvokimnatnoyi-kvartiri-u-krakovi</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/orenda-dvokimnatnoyi-kvartiri-u-krakovi-z-dizainerskim-remontom</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/prodaz-dvokimnatnoyi-kvartiri-mkrakiv</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estate/sucasna-kvartira-6132-m2-po-vul-gdanska-u-krakovi-z-garazem-1634-m2</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/estates</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/page/aktualna-informaciia</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/page/nasa-diialnist</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/page/pravova-informaciia</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/page/pro-nas</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/pro-nas</loc>
+    </url>
+    <url>
+        <loc>https://estateinvestment.com.ua/images/gallery/1667667635_karta_lokalu_23.pdf</loc>
     </url>
 </urlset>
